@@ -5,8 +5,8 @@ public abstract class Comestible extends Producto {
     private LocalDate fechaVenc;
     private int calorias;
 
-    public Comestible(String id, String descripc, int cantidad, float precioUnid, float gananciaPorcentual, boolean disponibleVenta, LocalDate fechaVenc, int calorias) {
-        super(id, descripc, cantidad, precioUnid);
+    public Comestible(int idNum, String descripc, int cantidad, float precioUnid, float gananciaPorcentual, boolean disponibleVenta, LocalDate fechaVenc, int calorias) {
+        super(idNum, descripc, cantidad, precioUnid);
         if (fechaVenc.isAfter(LocalDate.now())) {
             this.fechaVenc = fechaVenc;
         } else {
@@ -15,6 +15,12 @@ public abstract class Comestible extends Producto {
         this.calorias = calorias;
     }
 
+    @Override
+    public void setPrecioFinal(float precioFinal) {
+        super.setPrecioFinal(precioFinal);
+    }
+
+
     public LocalDate getFechaVenc() {
         return fechaVenc;
     }
@@ -22,4 +28,6 @@ public abstract class Comestible extends Producto {
     public int getCalorias() {
         return calorias;
     }
+
+    public abstract void calcularPrecioFinal();
 }
