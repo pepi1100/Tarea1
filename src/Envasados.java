@@ -57,9 +57,7 @@ public class Envasados extends Comestible {
         return tipoEnvase;
     }
 
-    public String getId() {
-        return id;
-    }
+
 
     public boolean isImportado() {
         return importado;

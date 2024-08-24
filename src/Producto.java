@@ -38,7 +38,9 @@ public abstract class Producto {
         return id;
     }
 
-    public abstract String getId();
+    public  String getId(){
+        return id;
+    };
 
     public void setGananciaPorcentual(float gananciaPorcentual) {
         this.gananciaPorcentual = gananciaPorcentual;

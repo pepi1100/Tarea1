@@ -15,10 +15,7 @@ public class ProdLimp extends Producto {
         setGananciaPorcentual(gananciaPorcentual);
     }
 
-    @Override
-    public String getId() {
-        return id;
-    }
+
 
     private String generateUniqueId(int number) {
         String formattedNumber = String.format("%03d", number);

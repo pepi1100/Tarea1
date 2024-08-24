@@ -37,14 +37,14 @@ public class Bebidas extends Comestible {
         } else if (graduacionAlcohol > 4.5) {
             return (int) (graduacionAlcohol * 1.5f);
         }
-        return 0; // Valor por defecto si no se cumplen las condiciones
+        return 0;
     }
 
     @Override
     public void setDescuento(float descuento) {
         if (descuento > 10) {
             System.out.println("El descuento no puede superar el 10% para bebidas.");
-            super.setDescuento(10); // Aplica el descuento máximo permitido
+            super.setDescuento(10);
         } else {
             super.setDescuento(descuento);
         }
@@ -56,9 +56,7 @@ public class Bebidas extends Comestible {
         setPrecioFinal(precioConDescuento);
     }
 
-    public String getId() {
-        return id;
-    }
+
 
     public float getGraduacionAlcohol() {
         return graduacionAlcohol;

@@ -4,10 +4,10 @@ import java.util.List;
 
 public class TestTienda {
     public static void main(String[] args) {
-        // Crear tienda
+
         Tienda tienda = new Tienda("SuperTienda", 1000, 15000.0f);
 
-        // Crear productos
+
         Bebidas bebida1 = new Bebidas(1, "Cerveza", 10, 50.0f, 15.0f, true, 4.0f, LocalDate.of(2024, 12, 31), 100);
         Bebidas bebida2 = new Bebidas(2, "Cerveza", 10, 50.0f, 15.0f, true, 4.0f, LocalDate.of(2024, 12, 31), 100);
 
@@ -17,7 +17,7 @@ public class TestTienda {
         ProdLimp limpieza1 = new ProdLimp(5, "Detergente", 25, 80.0f, 15.0f, true, "COCINA");
         ProdLimp limpieza2 = new ProdLimp(6, "Lavandina", 30, 50.0f, 10.0f, true, "MULTIUSO");
 
-        // Operaciones de compra
+
         tienda.comprarProducto(bebida1, ItemType.BEBIDA);
         tienda.comprarProducto(bebida2, ItemType.BEBIDA);
         tienda.comprarProducto(envasado1, ItemType.ENVASADO);
@@ -25,12 +25,12 @@ public class TestTienda {
         tienda.comprarProducto(limpieza1, ItemType.LIMPIEZA);
         tienda.comprarProducto(limpieza2, ItemType.LIMPIEZA);
 
-        // Imprimir estado inicial
+
         System.out.println("Estado inicial de la tienda:");
         System.out.println("Saldo en caja: " + tienda.getSaldoCaja());
         imprimirEstadoGondola(tienda);
 
-        // Operaciones de venta
+
         System.out.println("\nVenta 1: Vender 5 unidades de Cerveza y 10 unidades de Refresco");
         tienda.venderProducto(Arrays.asList(bebida1, bebida2), Arrays.asList(5, 10));
         System.out.println("Saldo en caja: " + tienda.getSaldoCaja());
@@ -47,7 +47,7 @@ public class TestTienda {
         System.out.println("Saldo en caja: " + tienda.getSaldoCaja());
         imprimirEstadoGondola(tienda);
 
-        // Obtener productos con descuento menor a 15%
+
         System.out.println("\nObtener comestibles no importados con descuento menor al 15%");
         List<String> comestiblesConMenorDescuento = tienda.obtenerComestiblesConMenorDescuento(15.0f);
         System.out.println(comestiblesConMenorDescuento);

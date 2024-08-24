@@ -15,10 +15,7 @@ public abstract class Comestible extends Producto {
         this.calorias = calorias;
     }
 
-    @Override
-    public void setPrecioFinal(float precioFinal) {
-        super.setPrecioFinal(precioFinal);
-    }
+
 
 
     public LocalDate getFechaVenc() {

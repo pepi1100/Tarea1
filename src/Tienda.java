@@ -70,32 +70,32 @@ public class Tienda {
             Producto producto = productos.get(i);
             int cantidad = cantidades.get(i);
 
-            // Verificar si el producto está habilitado para la venta
+
             if (!producto.getDisponibleVenta()) {
                 System.out.println("El producto " + producto.getId() + " " + producto.getDescripc() + " no se encuentra disponible.");
                 continue;
             }
 
-            // Verificar si hay suficiente stock
+
             if (cantidad > producto.getCantidad()) {
                 hayStockMenor = true;
                 cantidad = producto.getCantidad(); // Vender solo la cantidad disponible
             }
 
-            // Actualizar stock y caja
+
             producto.setCantidad(producto.getCantidad() - cantidad);
             this.saldoCaja += producto.getPrecioFinal() * cantidad;
 
-            // Eliminar producto de la góndola si ya no tiene stock
+
             if (producto.getCantidad() == 0) {
                 removerProductoDeGondola(producto);
             }
 
-            // Imprimir detalle de la venta
+
             System.out.println(producto.getId() + " " + producto.getDescripc() + " " + cantidad + " x " + producto.getPrecioFinal());
         }
 
-        // Mensaje informativo si hubo productos con stock menor al solicitado
+        
         if (hayStockMenor) {
             System.out.println("Hay productos con stock disponible menor al solicitado.");
         }
